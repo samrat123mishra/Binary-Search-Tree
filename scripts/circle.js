@@ -6,7 +6,7 @@ var createCircle = function () {
         circle.setAttributeNS(null, 'r', rx);
         circle.setAttributeNS(null, 'fill', "red");
         circle.setAttributeNS(null, 'stroke', "black");
-        svg.appendChild(circle);
+        elem.svg.appendChild(circle);
 
     }
 }

@@ -7,7 +7,7 @@ var createLine = function () {
     line.setAttribute("y2", p2[1]);
     line.style.stroke = "red";
     line.style.strokeWidth = "2px";
-    svg.append(line);
+    elem.svg.append(line);
 }
 }
 var line = new createLine();

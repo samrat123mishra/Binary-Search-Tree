@@ -1,13 +1,14 @@
-var svg = document.getElementsByTagName('svg')[0]; //The declaration for SVG tag
-var button = document.getElementById('butt');
-
-button.addEventListener('click', function () {
+function ElemDeclare(){
+    this.svg = document.getElementsByTagName('svg')[0]; //The declaration for SVG tag
+    this.button = document.getElementById('butt');
+}
+var elem = new ElemDeclare();
+elem.button.addEventListener('click', function () {
     var insertedVal = document.getElementById('input').value;
     bst.push(insertedVal);
-    console.log(bst);
 });
 function Node(val) {
-    this.value = parseInt(val);
+    this.value = parseFloat(val);
     this.left = null;
     this.right = null;
     this.x = 500;
@@ -24,6 +25,7 @@ BinarySearchTree.prototype.push = function (val) {
     if (!root) {
         this.root = new Node(val);
         circle.draw(this.root.x, this.root.y, this.root.r);
+        marker.draw(this.root.x,this.root.y, this.root.value);
         return;
     }
 
@@ -39,6 +41,7 @@ BinarySearchTree.prototype.push = function (val) {
                 currentNode.left = newNode;               
                 circle.draw(newNode.x, newNode.y, newNode.r);
                 line.draw([newNode.x, newNode.y],[currentNode.x,currentNode.y]);
+                marker.draw(newNode.x,newNode.y, newNode.value);
                 break;
             }
             else {
@@ -52,6 +55,7 @@ BinarySearchTree.prototype.push = function (val) {
                 currentNode.right = newNode;
                 circle.draw(newNode.x, newNode.y, newNode.r);
                 line.draw([newNode.x, newNode.y],[currentNode.x,currentNode.y]);
+                 marker.draw(newNode.x,newNode.y, newNode.value);
                 break;
             }
             else {
@@ -63,8 +67,3 @@ BinarySearchTree.prototype.push = function (val) {
 }
 var bst = new BinarySearchTree();
 
-// bst.push(3);
-// bst.push(2);
-// bst.push(4);
-// bst.push(1);
-// bst.push(5);
