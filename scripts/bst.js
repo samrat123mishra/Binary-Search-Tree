@@ -1,10 +1,8 @@
-elem.button.addEventListener('click', function () {
-    var insertedVal = document.getElementById('input').value;
-    bst.push(insertedVal);
-});
+var checkDuplicate = function(){
+         document.getElementById('id01').style.display = "block";
+    }
 function BinarySearchTree() {
     this.root = null;
-    
 }
 BinarySearchTree.prototype.push = function (val) {
     var root = this.root;
@@ -13,26 +11,26 @@ BinarySearchTree.prototype.push = function (val) {
         this.root.x = 500;
         this.root.y = 70;
         this.root.r = 18;
-        render.cDraw(this.root.x,this.root.y,this.root.r,"red");
-        render.tMarker(this.root.x,this.root.y,this.root.value);
+        bst.renderCircleBST(this.root.x, this.root.y, this.root.r, "red");
+        bst.renderTextBST(this.root.x, this.root.y, this.root.value);
         return;
     }
     var currentNode = root;
     var newNode = new Node(val);
     for (var i = 1; currentNode; i++) {
-         if(parseInt(val) === currentNode.value){
-            document.getElementById('id01').style.display="block";
+        if (parseInt(val) === currentNode.value) {
+           checkDuplicate();
             return;
         }
         else if (val < currentNode.value) {
             if (!currentNode.left) {
                 newNode.x = currentNode.x - (100 / i);
                 newNode.y = currentNode.y + 70;
-                newNode.r=this.root.r;
+                newNode.r = this.root.r;
                 currentNode.left = newNode;
-                render.cDraw(newNode.x, newNode.y, newNode.r,"red");
-                render.lDraw([newNode.x, newNode.y], [currentNode.x, currentNode.y],"red");
-                render.tMarker(newNode.x, newNode.y, newNode.value);
+                bst.renderCircleBST(newNode.x, newNode.y, newNode.r, "red");
+                bst.renderLineBST([newNode.x, newNode.y], [currentNode.x, currentNode.y], "red");
+                bst.renderTextBST(newNode.x, newNode.y, newNode.value);
                 break;
             }
             else {
@@ -43,32 +41,30 @@ BinarySearchTree.prototype.push = function (val) {
             if (!currentNode.right) {
                 newNode.x = currentNode.x + (100 / i);
                 newNode.y = currentNode.y + 70;
-                newNode.r=this.root.r;
+                newNode.r = this.root.r;
                 currentNode.right = newNode;
-                render.cDraw(newNode.x, newNode.y, newNode.r,"red");
-                render.lDraw([newNode.x, newNode.y], [currentNode.x, currentNode.y],"red");
-                render.tMarker(newNode.x, newNode.y, newNode.value);
+                bst.renderCircleBST(newNode.x, newNode.y, newNode.r, "red");
+                bst.renderLineBST([newNode.x, newNode.y], [currentNode.x, currentNode.y], "red");
+                bst.renderTextBST(newNode.x, newNode.y, newNode.value);
                 break;
             }
             else {
                 currentNode = currentNode.right;
             }
         }
-       
+
     }
+
 }
-function renderBST() {
-    this.cDraw = function(x,y,r,color){
-        circleDraw(x,y,r,color);
-    };
-    this.tMarker=function(x,y,text){
-        textMarker(x,y,text);
-    };
-    this.lDraw = function(p1,p2,color){
-        lineDraw(p1,p2,color);
-    };
+BinarySearchTree.prototype.renderCircleBST = function (x, y, r, color) {
+    circleDraw(x, y, r, color);
 }
-var render = new renderBST();
+BinarySearchTree.prototype.renderTextBST = function (x, y, text) {
+    textMarker(x, y, text);
+}
+BinarySearchTree.prototype.renderLineBST = function (p1, p2, color) {
+    lineDraw(p1, p2, color);
+}
 
 var bst = new BinarySearchTree();
 
