@@ -2,11 +2,11 @@
 <html>
 
 <head>
-    
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 
 <body>
-    <div id="field">
+    <div id="field" style="margin: 10px;">
         <input type="number" id="input" name="newnode" />
         <button id="butt">Insert</button>
     </div>
@@ -14,6 +14,14 @@
         <svg id="svgcontainer" height="600" width="1000">
         </svg>
     </div>
+     <div id="id01" class="w3-modal" style="display:none;">
+    <div class="w3-modal-content">
+      <header class="w3-container w3-teal">
+        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright close">&times;</span>
+        <center><h4>Oops!!!  You cannot enter same value twice</h4></center>
+      </header>
+    </div>
+  </div>
     <script src="scripts/bst.js"></script>
     <script src="scripts/line.js"></script>
     <script src="scripts/circle.js"></script>

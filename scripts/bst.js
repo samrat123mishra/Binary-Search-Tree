@@ -1,4 +1,4 @@
-function ElemDeclare(){
+function ElemDeclare() {
     this.svg = document.getElementsByTagName('svg')[0]; //The declaration for SVG tag
     this.button = document.getElementById('butt');
 }
@@ -13,35 +13,34 @@ function Node(val) {
     this.right = null;
     this.x = 500;
     this.y = 70;
-    this.r=15;
+    this.r = 20;
 }
 function BinarySearchTree() {
     this.root = null;
 }
 BinarySearchTree.prototype.push = function (val) {
-
     var root = this.root;
-
     if (!root) {
         this.root = new Node(val);
         circle.draw(this.root.x, this.root.y, this.root.r);
-        marker.draw(this.root.x,this.root.y, this.root.value);
+        marker.draw(this.root.x, this.root.y, this.root.value);
         return;
     }
-
     var currentNode = root;
     var newNode = new Node(val);
-
-    for (var i=1;currentNode;i++) {
-
-        if (val < currentNode.value) {
+    for (var i = 1; currentNode; i++) {
+         if(parseInt(val) === currentNode.value){
+            document.getElementById('id01').style.display="block";
+            return;
+        }
+        else if (val < currentNode.value) {
             if (!currentNode.left) {
-                newNode.x = currentNode.x - (100/i);
+                newNode.x = currentNode.x - (100 / i);
                 newNode.y = currentNode.y + 70;
-                currentNode.left = newNode;               
+                currentNode.left = newNode;
                 circle.draw(newNode.x, newNode.y, newNode.r);
-                line.draw([newNode.x, newNode.y],[currentNode.x,currentNode.y]);
-                marker.draw(newNode.x,newNode.y, newNode.value);
+                line.draw([newNode.x, newNode.y], [currentNode.x, currentNode.y]);
+                marker.draw(newNode.x, newNode.y, newNode.value);
                 break;
             }
             else {
@@ -50,19 +49,19 @@ BinarySearchTree.prototype.push = function (val) {
         }
         else {
             if (!currentNode.right) {
-                newNode.x = currentNode.x + (100/i);
+                newNode.x = currentNode.x + (100 / i);
                 newNode.y = currentNode.y + 70;
                 currentNode.right = newNode;
                 circle.draw(newNode.x, newNode.y, newNode.r);
-                line.draw([newNode.x, newNode.y],[currentNode.x,currentNode.y]);
-                 marker.draw(newNode.x,newNode.y, newNode.value);
+                line.draw([newNode.x, newNode.y], [currentNode.x, currentNode.y]);
+                marker.draw(newNode.x, newNode.y, newNode.value);
                 break;
             }
             else {
                 currentNode = currentNode.right;
             }
         }
-
+       
     }
 }
 var bst = new BinarySearchTree();
