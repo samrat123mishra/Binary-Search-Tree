@@ -6,6 +6,7 @@ var elem = new ElemDeclare();
 elem.button.addEventListener('click', function () {
     var insertedVal = document.getElementById('input').value;
     bst.push(insertedVal);
+    console.log(bst);
 });
 function Node(val) {
     this.value = parseFloat(val);
@@ -13,7 +14,7 @@ function Node(val) {
     this.right = null;
     this.x = 500;
     this.y = 70;
-    this.r = 20;
+    this.r = 18;
 }
 function BinarySearchTree() {
     this.root = null;
