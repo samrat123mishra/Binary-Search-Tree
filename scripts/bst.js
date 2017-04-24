@@ -17,14 +17,14 @@ BinarySearchTree.prototype.push = function (val) {
     }
     var currentNode = root;
     var newNode = new Node(val);
-    for (var i = 1; currentNode; i++) {
+    for (var i = 0; currentNode; i++) {
         if (parseInt(val) === currentNode.value) {
            checkDuplicate();
             return;
         }
         else if (val < currentNode.value) {
             if (!currentNode.left) {
-                newNode.x = currentNode.x - (100 / i);
+                newNode.x = currentNode.x - (250 / Math.pow(2,i));
                 newNode.y = currentNode.y + 70;
                 newNode.r = this.root.r;
                 currentNode.left = newNode;
@@ -39,7 +39,7 @@ BinarySearchTree.prototype.push = function (val) {
         }
         else {
             if (!currentNode.right) {
-                newNode.x = currentNode.x + (100 / i);
+                newNode.x = currentNode.x +  (250 / Math.pow(2,i));
                 newNode.y = currentNode.y + 70;
                 newNode.r = this.root.r;
                 currentNode.right = newNode;
