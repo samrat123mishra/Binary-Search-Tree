@@ -7,8 +7,10 @@
 
 <body>
     <div id="field" style="margin: 10px;">
-        <input type="number" id="input" name="newnode" />
+        <input type="text" id="input" name="newnode" />
         <button id="butt">Insert</button>
+        <input type="text" id="search-input" name="searchnode" />
+        <button id="search-butt">Search</button>
     </div>
     <div id="dvcontainer">
         <svg id="svgcontainer" height="600" width="1000">
@@ -24,9 +26,21 @@
             </header>
         </div>
     </div>
+
+    <div id="id02" class="w3-modal" style="display:none;">
+        <div class="w3-modal-content">
+            <header class="w3-container w3-teal">
+                <span onclick="document.getElementById('id02').style.display='none'" class="w3-button w3-display-topright close">&times;</span>
+                <center>
+                    <h4>You cannot enter a word or letter or space...</h4>
+                </center>
+            </header>
+        </div>
+    </div>
     <script src="scripts/main.js"></script>
     <script src="scripts/node.js"></script>
     <script src="scripts/bst.js"></script>
+    <script src="scripts/bst-search.js"></script>
     <script src="scripts/line.js"></script>
     <script src="scripts/circle.js"></script>
     <script src="scripts/textMarker.js"></script>
