@@ -1,37 +1,9 @@
-var checkDuplicate = function () {
-    document.getElementById('id01').style.display = "block";
-}
-var checkString = function () {
-    document.getElementById('id02').style.display = "block";
-}
-var ev = new Event('onduplicate');
-document.addEventListener('onduplicate', function (e) {
-    checkDuplicate();
-});
-function checkIfArrayIsUnique(myArray) {
-    for (var i = 0; i < myArray.length; i++) {
-        for (var j = 0; j < myArray.length; j++) {
-            if (i != j) {
-                if (myArray[i] === myArray[j]) {
-                    document.dispatchEvent(ev);//for the duplicate values
-                    return true;
-                }
-            }
-        }
-    }
-    return false;
-}
-function BinarySearchTree() {
-    this.root = null;
-}
-BinarySearchTree.prototype.push = function (val) {
+BinarySearchTree.prototype.delete = function (val) {
     var check = checkIfArrayIsUnique(val);
     if (check) {
         return;
-    }
-    if (isNaN(parseInt(val))) {
-        checkString();
-    } else {
+    } 
+    else {
         for (var j = 0; j < val.length; j++) {
             var root = this.root;
             if (!root) {
@@ -56,8 +28,8 @@ BinarySearchTree.prototype.push = function (val) {
                         newNode.y = currentNode.y + b;
                         newNode.r = this.root.r;
                         currentNode.left = newNode;
-                        bst.renderLineBST([newNode.x, newNode.y], [currentNode.x, currentNode.y], "red");
                         bst.renderCircleBST(newNode.x, newNode.y, newNode.r, "red");
+                        bst.renderLineBST([newNode.x, newNode.y], [currentNode.x, currentNode.y], "red");
                         bst.renderTextBST(newNode.x, newNode.y, newNode.value);
                         break;
                     }
@@ -71,8 +43,8 @@ BinarySearchTree.prototype.push = function (val) {
                         newNode.y = currentNode.y + b;
                         newNode.r = this.root.r;
                         currentNode.right = newNode;
-                        bst.renderLineBST([newNode.x, newNode.y], [currentNode.x, currentNode.y], "red");
                         bst.renderCircleBST(newNode.x, newNode.y, newNode.r, "red");
+                        bst.renderLineBST([newNode.x, newNode.y], [currentNode.x, currentNode.y], "red");
                         bst.renderTextBST(newNode.x, newNode.y, newNode.value);
                         break;
                     }
@@ -85,13 +57,3 @@ BinarySearchTree.prototype.push = function (val) {
         }
     }
 }
-BinarySearchTree.prototype.renderCircleBST = function (x, y, r, color) {
-    circleDraw(x, y, r, color);
-}
-BinarySearchTree.prototype.renderTextBST = function (x, y, text) {
-    textMarker(x, y, text);
-}
-BinarySearchTree.prototype.renderLineBST = function (p1, p2, color) {
-    lineDraw(p1, p2, color);
-}
-var bst = new BinarySearchTree();
