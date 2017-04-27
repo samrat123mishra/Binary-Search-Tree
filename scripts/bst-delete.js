@@ -23,11 +23,11 @@ BinarySearchTree.prototype.delete = function (val) {
                     return;
                 }
                 if (val[j] < currentNode.value) {
-                    if (!currentNode.left) {
+                    if (!currentNode.left) { //when bst contains one left child...
                         newNode.x = currentNode.x - (d / Math.pow(2, i));
                         newNode.y = currentNode.y + b;
                         newNode.r = this.root.r;
-                        currentNode.left = newNode;
+                        currentNode.left = newNode; 
                         bst.renderCircleBST(newNode.x, newNode.y, newNode.r, "red");
                         bst.renderLineBST([newNode.x, newNode.y], [currentNode.x, currentNode.y], "red");
                         bst.renderTextBST(newNode.x, newNode.y, newNode.value);
@@ -38,7 +38,7 @@ BinarySearchTree.prototype.delete = function (val) {
                     }
                 }
                 else {
-                    if (!currentNode.right) {
+                    if (!currentNode.right) { //checking the right inorder successor
                         newNode.x = currentNode.x + (d / Math.pow(2, i));
                         newNode.y = currentNode.y + b;
                         newNode.r = this.root.r;
