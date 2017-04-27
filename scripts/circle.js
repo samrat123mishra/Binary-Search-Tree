@@ -1,4 +1,4 @@
-function circleDraw(x, y, rx,color) {
+function circleDraw(x, y, rx, color) {
     var circle = document.createElementNS("http://www.w3.org/2000/svg", 'circle');
     circle.setAttributeNS(null, 'cx', x);
     circle.setAttributeNS(null, 'cy', y);

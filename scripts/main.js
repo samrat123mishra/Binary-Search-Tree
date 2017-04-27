@@ -10,7 +10,15 @@ function createElement() {
     this.deletebutton = document.getElementById('delete-butt');
 }
 var elem = new createElement();
-function clearBST() {
+function checkingDuplicacy(myArray, x) {
+    for (var i = 0; i < myArray.length; i++) {
+        if (myArray[i] === x) {
+            return true;
+        }
+    }
+    return false;
+}
+function clearBST() {  //this function is responsible for clearing the bst...
     while (elem.svg.lastChild) {
         elem.svg.removeChild(elem.svg.lastChild);
     }
@@ -62,13 +70,5 @@ function parseInput() {
     var arr = insertedVal.split(',');
     insert(arr);
 }
-function checkingDuplicacy(myArray, x) {
-    for (var i = 0; i < myArray.length; i++) {
-        if (myArray[i] === x) {
-            // document.dispatchEvent(ev);
-            return true;
-        }
-    }
-    return false;
-}
+
 

@@ -33,13 +33,14 @@ BinarySearchTree.prototype.push = function (val) {
         checkString();
     } else {
         for (var j = 0; j < val.length; j++) {
-            var root = this.root;
-            if (!root) {
+            var root = this.root,
+                color = 'red';
+            if (!root) { //if there is no root...
                 this.root = new Node(val[j]);
                 this.root.x = a;
                 this.root.y = b;
                 this.root.r = c;
-                bst.renderCircleBST(this.root.x, this.root.y, this.root.r, "red");
+                bst.renderCircleBST(this.root.x, this.root.y, this.root.r, color);
                 bst.renderTextBST(this.root.x, this.root.y, this.root.value);
                 continue;
             }
@@ -50,14 +51,14 @@ BinarySearchTree.prototype.push = function (val) {
                     checkDuplicate();
                     return;
                 }
-                 if (val[j] < currentNode.value) {
+                if (val[j] < currentNode.value) { //for insertion in the left child...
                     if (!currentNode.left) {
                         newNode.x = currentNode.x - (d / Math.pow(2, i));
                         newNode.y = currentNode.y + b;
                         newNode.r = this.root.r;
                         currentNode.left = newNode;
-                        bst.renderLineBST([newNode.x, newNode.y], [currentNode.x, currentNode.y], "red");
-                        bst.renderCircleBST(newNode.x, newNode.y, newNode.r, "red");
+                        bst.renderLineBST([newNode.x, newNode.y], [currentNode.x, currentNode.y], color);
+                        bst.renderCircleBST(newNode.x, newNode.y, newNode.r, color);
                         bst.renderTextBST(newNode.x, newNode.y, newNode.value);
                         break;
                     }
@@ -65,14 +66,14 @@ BinarySearchTree.prototype.push = function (val) {
                         currentNode = currentNode.left;
                     }
                 }
-                else {
+                else {  //for the insertion in the right child...
                     if (!currentNode.right) {
                         newNode.x = currentNode.x + (d / Math.pow(2, i));
                         newNode.y = currentNode.y + b;
                         newNode.r = this.root.r;
                         currentNode.right = newNode;
-                        bst.renderLineBST([newNode.x, newNode.y], [currentNode.x, currentNode.y], "red");
-                        bst.renderCircleBST(newNode.x, newNode.y, newNode.r, "red");
+                        bst.renderLineBST([newNode.x, newNode.y], [currentNode.x, currentNode.y], color);
+                        bst.renderCircleBST(newNode.x, newNode.y, newNode.r, color);
                         bst.renderTextBST(newNode.x, newNode.y, newNode.value);
                         break;
                     }
@@ -85,13 +86,13 @@ BinarySearchTree.prototype.push = function (val) {
         }
     }
 }
-BinarySearchTree.prototype.renderCircleBST = function (x, y, r, color) {
+BinarySearchTree.prototype.renderCircleBST = function (x, y, r, color) {  //function for rendering bst circle...
     circleDraw(x, y, r, color);
 }
-BinarySearchTree.prototype.renderTextBST = function (x, y, text) {
+BinarySearchTree.prototype.renderTextBST = function (x, y, text) {  //function for rendering bst text...
     textMarker(x, y, text);
 }
-BinarySearchTree.prototype.renderLineBST = function (p1, p2, color) {
+BinarySearchTree.prototype.renderLineBST = function (p1, p2, color) { //function for rendering bst line...
     lineDraw(p1, p2, color);
 }
-var bst = new BinarySearchTree();
+var bst = new BinarySearchTree(); //creation of bst object...

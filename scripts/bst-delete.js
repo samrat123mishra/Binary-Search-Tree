@@ -2,7 +2,7 @@ BinarySearchTree.prototype.delete = function (val) {
     var check = checkIfArrayIsUnique(val);
     if (check) {
         return;
-    } 
+    }
     else {
         for (var j = 0; j < val.length; j++) {
             var root = this.root;
@@ -22,7 +22,7 @@ BinarySearchTree.prototype.delete = function (val) {
                     checkDuplicate();
                     return;
                 }
-                 if (val[j] < currentNode.value) {
+                if (val[j] < currentNode.value) {
                     if (!currentNode.left) {
                         newNode.x = currentNode.x - (d / Math.pow(2, i));
                         newNode.y = currentNode.y + b;
