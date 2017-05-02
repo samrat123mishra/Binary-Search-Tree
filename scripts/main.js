@@ -8,6 +8,8 @@ function createElement() {
     this.button = document.getElementById('butt');
     this.searchbutton = document.getElementById('search-butt');
     this.deletebutton = document.getElementById('delete-butt');
+    this.close = document.getElementsByClassName('popup-1')[0];
+    this.close1 = document.getElementsByClassName('popup-2')[0];
 }
 var elem = new createElement();
 function checkingDuplicacy(myArray, x) {
@@ -18,12 +20,19 @@ function checkingDuplicacy(myArray, x) {
     }
     return false;
 }
-function clearBST() {  //this function is responsible for clearing the bst...
+function clearBST() {
     while (elem.svg.lastChild) {
         elem.svg.removeChild(elem.svg.lastChild);
     }
 }
-
+elem.close.addEventListener('click',closepopup1);
+function closepopup1(){
+document.getElementById('id01').style.display='none';
+}
+elem.close1.addEventListener('click',closepopup2);
+function closepopup2(){
+document.getElementById('id02').style.display='none';
+}
 elem.button.addEventListener('click', parseInput);
 elem.searchbutton.addEventListener('click', function () {
     var searchVal = document.getElementById('search-input').value;

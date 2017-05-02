@@ -57,7 +57,7 @@ BinarySearchTree.prototype.push = function (val) {
                         newNode.y = currentNode.y + b;
                         newNode.r = this.root.r;
                         currentNode.left = newNode;  //assigning new node to currentNode of left..
-                        bst.renderLineBST([newNode.x, newNode.y], [currentNode.x, currentNode.y], color);
+                        bst.renderLineBST([newNode.x, newNode.y], [currentNode.x-(c/2), currentNode.y+(c/2)], color);
                         bst.renderCircleBST(newNode.x, newNode.y, newNode.r, color);
                         bst.renderTextBST(newNode.x, newNode.y, newNode.value);
                         break;
@@ -72,7 +72,7 @@ BinarySearchTree.prototype.push = function (val) {
                         newNode.y = currentNode.y + b;
                         newNode.r = this.root.r;
                         currentNode.right = newNode;  //assigning new node to currentNode of right..
-                        bst.renderLineBST([newNode.x, newNode.y], [currentNode.x, currentNode.y], color);
+                        bst.renderLineBST([newNode.x, newNode.y], [currentNode.x+(c/2), currentNode.y+(c/2)], color);
                         bst.renderCircleBST(newNode.x, newNode.y, newNode.r, color);
                         bst.renderTextBST(newNode.x, newNode.y, newNode.value);
                         break;

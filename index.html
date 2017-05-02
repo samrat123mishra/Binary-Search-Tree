@@ -3,6 +3,7 @@
 
 <head>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="layout/bst.css">
 </head>
 
 <body>
@@ -15,13 +16,15 @@
         <button id="delete-butt">Delete</button>
     </div>
     <div id="dvcontainer">
-        <svg id="svgcontainer" height="600" width="1000">
+        <svg id="svgcontainer" height="450" width="1000" >
         </svg>
+        
     </div>
-    <div id="id01" class="w3-modal" style="display:none;">
+    <h2 style="margin-left:30%;"> Visualization Of Binary Search Tree </h2>
+    <div id="id01" class="w3-modal">
         <div class="w3-modal-content">
             <header class="w3-container w3-teal">
-                <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright close">&times;</span>
+                <span  class="w3-button w3-display-topright close popup-1">&times;</span>
                 <center>
                     <h4>Oops!!! You cannot enter same value twice</h4>
                 </center>
@@ -29,10 +32,10 @@
         </div>
     </div>
 
-    <div id="id02" class="w3-modal" style="display:none;">
+    <div id="id02" class="w3-modal">
         <div class="w3-modal-content">
             <header class="w3-container w3-teal">
-                <span onclick="document.getElementById('id02').style.display='none'" class="w3-button w3-display-topright close">&times;</span>
+                <span  class="w3-button w3-display-topright close popup-2">&times;</span>
                 <center>
                     <h4>You cannot enter a word or letter or space...</h4>
                 </center>

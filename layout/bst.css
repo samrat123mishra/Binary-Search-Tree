@@ -1,0 +1,26 @@
+#svgcontainer{
+    border:2px solid black;
+    margin-left:13%;
+    margin-top:3%;
+    background-color:rgba(12,45,322,0.2);
+}
+#id01{
+    display:none;
+}
+#id02{
+    display:none;
+}
+#input{
+margin-left:15%;
+}
+#search-input{
+    margin-left:3%;
+}
+#delete-input{
+    margin-left:3%;
+}
+#field{
+    background-color:rgba(33,605,152,0.5);
+    height:50px;
+    padding:10px;
+}
