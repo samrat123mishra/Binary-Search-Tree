@@ -1,0 +1,26 @@
+{
+  "name": "bst",
+  "version": "1.0.0",
+  "description": "This shows visualization for the binary search tree using SVG.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samrat123mishra/Binary-Search-Tree.git"
+  },
+  "author": "soumya ghosh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samrat123mishra/Binary-Search-Tree/issues"
+  },
+  "homepage": "https://github.com/samrat123mishra/Binary-Search-Tree#readme",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-beautify": "^2.0.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-uglify": "^2.1.2",
+    "require-dir": "^0.3.1"
+  }
+}
