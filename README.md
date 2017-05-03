@@ -1,2 +1,2 @@
-# Binary-Search-Tree
-This shows visualization for the binary search tree using SVG.
+# Binary-Search-Tree-Gulp-Task
+compressing bst files
